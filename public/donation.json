@@ -3,7 +3,7 @@
     "items": [
       {
         "id": 1,
-        "department": "health",
+        "department": "Health",
         "title": "Clean water for children",
         "prize": "$20",
         "description": "Essential first aid supplies for emergencies",
@@ -12,9 +12,21 @@
         "color2":"rgba(0, 82, 255, 0.20)",
         "image":"https://i.ibb.co/JnHcWwJ/Health.png"
       },
+      
       {
         "id": 2,
-        "department": "health",
+        "department": "Education",
+        "title": "Good Education",
+        "prize": "$50",
+        "description": "Educational books for various subjects",
+        "color": "#FF444A",
+        "color1":"rgba(255, 68, 74, 0.15)",
+        "color2":"rgba(255, 68, 74, 0.20)",
+        "image":"https://i.ibb.co/rp5XqhX/Education.png"
+      },
+      {
+        "id": 3,
+        "department": "Health",
         "title": "Clean water for children",
         "prize": "$10",
         "description": "A daily dose of essential vitamins",
@@ -24,22 +36,11 @@
         "image":"https://i.ibb.co/JnHcWwJ/Health.png"
       },
       {
-        "id": 3,
-        "department": "education",
-        "title": "Good education",
-        "prize": "$50",
-        "description": "Educational books for various subjects",
-        "color": "#FF444A",
-        "color1":"rgba(255, 68, 74, 0.15)",
-        "color2":"rgba(255, 68, 74, 0.20)",
-        "image":"https://i.ibb.co/rp5XqhX/Education.png"
-      },
-      {
         "id": 4,
-        "department": "education",
-        "title": "Good education",
+        "department": "Education",
+        "title": "Good Education",
         "prize": "$800",
-        "description": "A powerful laptop for educational purposes",
+        "description": "A powerful laptop for Educational purposes",
         "color": "#FF444A",
         "color1":"rgba(255, 68, 74, 0.15)",
         "color2":"rgba(255, 68, 74, 0.15)",
@@ -47,7 +48,7 @@
       },
       {
         "id": 5,
-        "department": "clothing",
+        "department": "Clothing",
         "title": "Used Clothing Drive",
         "prize": "$15",
         "description": "Comfortable cotton t-shirt in various colors",
@@ -57,20 +58,10 @@
         
         "image": "https://i.ibb.co/xzVxGH5/Clothing.png"
       },
-      {
-        "id": 6,
-        "department": "clothing",
-        "title": "Used Clothing Drive",
-        "prize": "$40",
-        "description": "Stylish and durable jeans for everyday wear",
-        "color": "#79C23F",
-        "color1":"rgba(121, 194, 63, 0.15)",
-        "color2":"rgba(121, 194, 63, 0.20)",
-        "image": "https://i.ibb.co/xzVxGH5/Clothing.png"
-      },
+      
       {
         "id": 7,
-        "department": "food",
+        "department": "Food",
         "title": "Better Food for Everyone",
         "prize": "$5",
         "description": "Assorted canned soups for quick meals",
@@ -80,11 +71,22 @@
         "image":"https://i.ibb.co/crNxRML/Food.png"
       },
       {
+        "id": 6,
+        "department": "Clothing",
+        "title": "Used Clothing Drive",
+        "prize": "$40",
+        "description": "Stylish and durable jeans for everyday wear",
+        "color": "#79C23F",
+        "color1":"rgba(121, 194, 63, 0.15)",
+        "color2":"rgba(121, 194, 63, 0.20)",
+        "image": "https://i.ibb.co/xzVxGH5/Clothing.png"
+      },
+      {
         "id": 8,
-        "department": "food",
+        "department": "Food",
         "title": "Better Food for Everyone",
         "prize": "$30",
-        "description": "A variety of fresh fruits for a healthy diet",
+        "description": "A variety of fresh fruits for a Healthy diet",
         "color": "#F87147",
         "color1":"rgba(248, 113, 71, 0.15)",
         "color2":"rgba(248, 113, 71, 0.15)",
@@ -92,7 +94,7 @@
       },
       {
         "id": 9,
-        "department": "health",
+        "department": "Health",
         "title": "Clean water for children",
         "prize": "$15",
         "description": "Digital thermometer for measuring body temperature",
@@ -103,8 +105,8 @@
       },
       {
         "id": 10,
-        "department": "education",
-        "title": "Good education",
+        "department": "Education",
+        "title": "Good Education",
         "prize": "$20",
         "description": "A calculator with scientific functions for students",
         "color": "#FF444A",
@@ -114,7 +116,7 @@
       },
       {
         "id": 11,
-        "department": "clothing",
+        "department": "Clothing",
         "title": "Used Clothing Drive",
         "prize": "$35",
         "description": "Warm and cozy sweater for cold weather",
@@ -125,7 +127,7 @@
       },
       {
         "id": 12,
-        "department": "food",
+        "department": "Food",
         "title": "Better Food for Everyone",
         "prize": "$3",
         "description": "Assorted chocolate bars for a sweet treat",
