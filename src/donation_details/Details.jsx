@@ -18,30 +18,52 @@ const Details = () => {
 
     }, [id, detailsData])
 
-    console.log(donationCard?.image);
+    
     
 const {image,department,title,color,color1,color2,description,price}=donationCard || {}
+     const clikedHandleing = () => {
+    const donateditems = [];
 
-console.log(donationCard);
+    const items = JSON.parse(localStorage.getItem("donated"));
+
+    if (!items) {
+      donateditems.push(card);
+      localStorage.setItem("donated", JSON.stringify(donateditems));
+      alert("product added");
+    } else {
+      const isexist = items.find((item) => item.id === id);
+
+      if (isexist) {
+        donateditems.push(...items, card);
+        localStorage.setItem("donated", JSON.stringify(donateditems));
+        alert("product added");
+      } else {
+        alert("already addeded");
+      }
+    }
+};
+
 
     return (
-        <div className="pt-20">
-<div className="card  bg-base-100 shadow-xl">
+        <div>
+        <div className="py-20 container mx-auto ">
+<div className="card  bg-base-100 ">
       <figure className="relative w-full">
-        <img className="w-full h-[650px]" src={image} alt="Shoes" />
+        <img className=" h-[650px]" src={image} alt="Shoes" />
 
-        <div className="h-15  bg-slate-600/70 absolute bottom-0 w-full ">
-          <button style={{backgroundColor:`${color}`}} className="btn  ">
-            Donate {price} $
+        <div className="h-15  bg-slate-600/70 absolute bottom-0 w-full px-10 py-3 ">
+          <button onClick={()=>clikedHandleing()} style={{backgroundColor:`${color}`}} className="btn  ">
+            Donate {price} 
           </button>
         </div>
       </figure>
-      <div className="card-body">
+      <div >
         <h2 className="card-title text-4xl font-bold py-4">{title}</h2>
         <p  className="text-gray-500">{description}</p>
        
       </div>
     </div>
+        </div>
         </div>
     );
 };
