@@ -1,8 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import Navbar from "../Compoonents/Header/Navbar";
 
 
 const MainLayout = () => {
+
+  
     return (
         <div className="container mx-auto ">
           <Navbar></Navbar> 

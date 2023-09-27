@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Card = ({card}) => {
     const {image,department,title,color,color1,color2,id}=card
-    console.log(image);
+   
     return (
       <Link to={`/donationDetails/${id}`}>
-        <div className="flex py-4">
+        <div className="flex  py-3">
             <div className="card bg-base-100 shadow-xl">
   <figure><img className="w-full" src={image} alt="" /></figure>
   <div style={{backgroundColor:`${color1}`}} className="card-body ">
