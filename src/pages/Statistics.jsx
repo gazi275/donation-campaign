@@ -3,31 +3,32 @@ import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recha
 
 const Statistics = () => {
 
-  const [total, settotal] = useState(0);
-  const [totalDonation, settotalDonation] = useState(0);
-  const [totalRemaining, settotalRemaining] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
+  const [totalDonatedItem, setTotalDonatedItem] = useState(0);
+  const [remainingTotal, setRemainingTotal] = useState(0);
 
-  const gettingDataFromLocal = JSON.parse(localStorage.getItem('donatedData'));
+  const dataFromLocalStorage = JSON.parse(localStorage.getItem('donated'));
 
- 
+  // doantion data fatch
   const datationData = async () => {
     const response = await fetch('/donation.json');
     const data = await response.json();
-    settotal(data?.length || 0);
+    setTotalItems(data?.length || 0);
   }
 
   useEffect(() => {
-    settotalDonation(gettingDataFromLocal?.length || 0);
+    setTotalDonatedItem(dataFromLocalStorage?.length || 0);
     datationData()
 
-    settotalRemaining(total - totalDonation);
-  }, [gettingDataFromLocal,total]);
+    setRemainingTotal(totalItems - totalDonatedItem);
+  }, [dataFromLocalStorage,totalItems]);
 
-  
+  console.log("sjdfsa", totalItems, totalDonatedItem)
+  console.log("donatedItrem", totalDonatedItem,remainingTotal)
 
   const data = [
-    { name: 'Total Donation', value: totalRemaining},
-    { name: 'Your Donation', value: totalDonation }
+    { name: 'Total Donation', value: remainingTotal},
+    { name: 'Your Donation', value: totalDonatedItem }
   ];
 
 
@@ -41,7 +42,7 @@ const Statistics = () => {
     const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
     return (
       <text x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central">
-        {`${(value / total * 100).toFixed(1)}%`}
+        {`${(value / totalItems * 100).toFixed(1)}%`}
       </text>
     );
   };
@@ -75,4 +76,3 @@ const Statistics = () => {
 };
 
 export default Statistics;
-
