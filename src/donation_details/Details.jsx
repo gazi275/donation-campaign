@@ -18,7 +18,7 @@ const Details = () => {
 
     const { image, department, title, color, color1, color2, description, price } = donationCard || {}
 
-    console.log("mitul", donationCard);
+   
 
 
     const clikedHandleing = () => {

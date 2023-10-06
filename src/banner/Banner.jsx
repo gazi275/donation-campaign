@@ -3,7 +3,7 @@
 const Banner = () => {
     return (
         <div>
-            <div>
+            <div >
       <div className="bg-[url(https://i.ibb.co/XSqyWbq/donation.jpg)] bg-no-repeat h-[450px] w-full  bg-cover my-16">
         <div className=" w-full h-full bg-white/80 flex justify-center items-center">
           <div>

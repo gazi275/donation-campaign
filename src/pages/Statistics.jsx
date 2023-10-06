@@ -23,8 +23,8 @@ const Statistics = () => {
     setRemainingTotal(totalItems - totalDonatedItem);
   }, [dataFromLocalStorage,totalItems]);
 
-  console.log("sjdfsa", totalItems, totalDonatedItem)
-  console.log("donatedItrem", totalDonatedItem,remainingTotal)
+  // console.log("sjdfsa", totalItems, totalDonatedItem)
+  // console.log("donatedItrem", totalDonatedItem,remainingTotal)
 
   const data = [
     { name: 'Total Donation', value: remainingTotal},
