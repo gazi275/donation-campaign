@@ -4,8 +4,9 @@ const Donation = () => {
     const items = JSON.parse(localStorage.getItem("donated")) || [];
     console.log(items);
     return (
-        <div className='grid grid-cols-2 gap-5 mt-20'>
-            {
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-20   ml-10 '>
+           
+             {
                 items?.map(i => {
                     return (<div >
                         <div className="card card-side bg-base-100 shadow-xl">
@@ -35,7 +36,7 @@ const Donation = () => {
                     )
                 }
                 )
-            }
+            } 
         </div>
     );
 };

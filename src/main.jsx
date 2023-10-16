@@ -10,12 +10,14 @@ import Home from './pages/Home.jsx';
 import Donation from './pages/donation/Donation.jsx';
 import Statistics from './pages/Statistics.jsx';
 import Details from './donation_details/Details.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout> ,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
