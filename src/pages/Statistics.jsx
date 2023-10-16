@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
@@ -10,25 +11,38 @@ const Statistics = () => {
   const dataFromLocalStorage = JSON.parse(localStorage.getItem('donated'));
 
   // doantion data fatch
-  const datationData = async () => {
-    const response = await fetch('/donation.json');
-    const data = await response.json();
-    setTotalItems(data?.length || 0);
-  }
-
+  // const datationData = async () => {
+  //   const response = await fetch('/donation.json');
+  //   const data = await response.json();
+  //   console.log(data);
+  //   setTotalItems(data?.length || 0);
+  // }
+const allData=useLoaderData()
   useEffect(() => {
+    //   fetch('/donation.json')
+    //   .then(res=>res.json())
+    //  .then(data=> setTotalItems(data?.length || 0))
+   
+   setTotalItems(allData.items.length)
+   
+
+
+
     setTotalDonatedItem(dataFromLocalStorage?.length || 0);
-    datationData()
+    // datationData()
+if(totalItems>0){
+  setRemainingTotal(totalItems - totalDonatedItem);
+}
+console.log(data);
+    
+  }, [dataFromLocalStorage,allData]);
 
-    setRemainingTotal(totalItems - totalDonatedItem);
-  }, [dataFromLocalStorage,totalItems]);
-
-  // console.log("sjdfsa", totalItems, totalDonatedItem)
-  // console.log("donatedItrem", totalDonatedItem,remainingTotal)
+  console.log("sjdfsa", totalItems, totalDonatedItem)
+  console.log("donatedItrem", totalDonatedItem,remainingTotal)
 
   const data = [
     { name: 'Total Donation', value: remainingTotal},
-    { name: 'Your Donation', value: totalDonatedItem }
+    { name: 'Your Donation', value: totalDonatedItem  }
   ];
 
 
@@ -38,8 +52,8 @@ const Statistics = () => {
   const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, value }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
 
-    const x = cx + radius * Math.cos(-midAngle * (Math.PI / 180));
-    const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
+    const x = cx + radius * Math.cos(midAngle * (Math.PI / 180));
+    const y = cy + radius * Math.sin(midAngle * (Math.PI / 180));
     return (
       <text x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central">
         {`${(value / totalItems * 100).toFixed(1)}%`}
